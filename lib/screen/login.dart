@@ -18,14 +18,12 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo
               Container(
                 width: 100,
                 height: 100,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 146, 202,
-                      249), // Puedes ajustar el color del logo aquí
+                  color: Color.fromARGB(255, 146, 202, 249),
                 ),
                 child: IconButton(
                   icon: const Icon(
@@ -34,13 +32,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                   onPressed: () {},
                 ),
-                // Aquí puedes agregar un widget de Image si tienes un logo específico
-                // child: Image.asset('assets/logo.png'),
               ),
 
               const SizedBox(height: 30),
 
-              // Input de nombre de usuario
               TextField(
                 controller: _usernameController,
                 decoration: const InputDecoration(
@@ -54,7 +49,6 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 15),
 
-              // Input de contraseña
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -67,19 +61,17 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: 30),
 
-              // Botón de Logearse
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  foregroundColor: Colors.white, // Texto del botón blanco
+                  foregroundColor: Colors.white,
                 ),
                 onPressed: () {
                   String username = _usernameController.text;
                   String password = _passwordController.text;
 
-                  // Validar que los campos no estén vacíos
                   if (username.isEmpty || password.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
@@ -100,7 +92,7 @@ class LoginScreen extends StatelessWidget {
               // Botón de Registrarse
               TextButton(
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.black, // Texto del botón negro
+                  foregroundColor: Colors.black,
                 ),
                 onPressed: () {
                   Navigator.push(context,
@@ -111,14 +103,11 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              // Botón de Olvidé mi contraseña
               TextButton(
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.black, // Texto del botón negro
+                  foregroundColor: Colors.black,
                 ),
-                onPressed: () {
-                  // Acción al presionar el botón de Olvidé mi contraseña
-                },
+                onPressed: () {},
                 child: const Text('Olvidé mi contraseña'),
               ),
             ],

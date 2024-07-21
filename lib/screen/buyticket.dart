@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BuyTicketScreen extends StatefulWidget {
+  const BuyTicketScreen({super.key});
+
   @override
   _BuyTicketState createState() => _BuyTicketState();
 }
@@ -12,20 +14,20 @@ class _BuyTicketState extends State<BuyTicketScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Comprar Boleto'),
+        title: const Text('Comprar Boleto'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Punto de partida: Santo Domingo'),
@@ -36,8 +38,8 @@ class _BuyTicketState extends State<BuyTicketScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Row(
+            const SizedBox(height: 20),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -50,16 +52,16 @@ class _BuyTicketState extends State<BuyTicketScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 setState(() {
                   showPaymentSection = true;
                 });
               },
-              child: Text('Comprar boleto'),
+              child: const Text('Comprar boleto'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             if (showPaymentSection) CreditCardFormDialog(),
           ],
         ),
@@ -69,9 +71,11 @@ class _BuyTicketState extends State<BuyTicketScreen> {
 }
 
 class CreditCardFormDialog extends StatelessWidget {
+  const CreditCardFormDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return const Column(children: [
       Text('Ingrese los datos de su tarjeta de crédito'),
       Column(
         mainAxisSize: MainAxisSize.min,

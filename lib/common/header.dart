@@ -4,15 +4,16 @@ import 'package:flutter/material.dart';
 class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
   final String titleText;
 
-  const HeaderWidget({Key? key, required this.titleText}) : super(key: key);
+  const HeaderWidget({super.key, required this.titleText});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: const Color.fromARGB(255, 2, 55, 152),
       title: Text(titleText),
       actions: [
         IconButton(
-          icon: Icon(Icons.account_circle),
+          icon: const Icon(Icons.account_circle),
           onPressed: () {
             Navigator.push(
               context,
@@ -20,12 +21,12 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
             );
           },
         ),
-        Text('Marcos Martinez'),
-        SizedBox(width: 10),
+        const Text('Marcos Martinez'),
+        const SizedBox(width: 10),
       ],
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

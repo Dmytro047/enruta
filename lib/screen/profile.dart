@@ -4,10 +4,12 @@ import 'package:enruta/screen/tripdetail.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: HeaderWidget(
+        appBar: const HeaderWidget(
           titleText: 'Perfil',
         ),
         body: SingleChildScrollView(
@@ -19,21 +21,22 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Mis boletos',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          padding: EdgeInsets.all(10),
+                          margin: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
+                            color: Colors.orange,
                             border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -43,10 +46,14 @@ class ProfileScreen extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Destino: La Romana'),
-                                  Text(
+                                  const Text('Destino: Av. 27 de Febrero'),
+                                  const Text(
                                       'Fecha del viaje: Domingo, 7 de Junio, 2024'),
                                   ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.black,
+                                      foregroundColor: Colors.white,
+                                    ),
                                     onPressed: () {
                                       Navigator.push(
                                           context,
@@ -54,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                                               builder: (context) =>
                                                   TripDetailScreen()));
                                     },
-                                    child: Text('Mostrar el Boleto'),
+                                    child: const Text('Mostrar el Boleto'),
                                   ),
                                 ],
                               )
@@ -69,6 +76,6 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: FooterWidget());
+        bottomNavigationBar: const FooterWidget());
   }
 }

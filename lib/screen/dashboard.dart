@@ -4,10 +4,13 @@ import 'package:enruta/screen/buyticket.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HeaderWidget(
+      backgroundColor: Colors.white,
+      appBar: const HeaderWidget(
         titleText: 'Bienvenidos',
       ),
       body: Column(
@@ -16,29 +19,29 @@ class DashboardScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Desde',
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 10),
-                TextField(
+                const SizedBox(height: 10),
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Hacia',
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.filter_list),
+                      icon: const Icon(Icons.filter_list),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Icon(Icons.map),
+                      icon: const Icon(Icons.map),
                       onPressed: () {},
                     ),
                   ],
@@ -53,29 +56,36 @@ class DashboardScreen extends StatelessWidget {
                 children: [
                   for (int i = 1; i <= 5; i++)
                     Container(
-                      margin: EdgeInsets.all(10),
-                      padding: EdgeInsets.all(15),
+                      margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey),
                         borderRadius: BorderRadius.circular(10),
+                        color: Colors.orange,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Punto de partida: Santo Domingo'),
-                          Text('Destino: La Romana'),
-                          Text('Tiempo faltante para partir: 20 minutos'),
-                          Text('Duración del viaje: 2 horas 50 minutos'),
-                          Text('Las paradas: Viaje directo'),
-                          SizedBox(height: 10),
+                          const Text('Punto de partida: Centro de los Heroes'),
+                          const Text('Destino: Av. 27 de Febrero'),
+                          const Text('Tiempo faltante para partir: 20 minutos'),
+                          const Text('Duración del viaje: 2 horas 50 minutos'),
+                          const Text('Las paradas: Viaje directo'),
+                          const SizedBox(height: 10),
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              foregroundColor: Colors.white,
+                            ),
                             onPressed: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => BuyTicketScreen()));
                             },
-                            child: Text('Comprar boleto'),
+                            child: const Text(
+                              'Comprar boleto',
+                            ),
                           ),
                         ],
                       ),
