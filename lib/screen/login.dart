@@ -1,4 +1,5 @@
 import 'package:enruta/screen/dashboard.dart';
+import 'package:enruta/screen/mainmenu.dart';
 import 'package:enruta/screen/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +83,8 @@ class LoginScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => DashboardScreen()));
+                          builder: (context) => const MenuScreen()));
+                  //builder: (context) => const DashboardScreen()));
                 },
                 child: const Text('Logearse'),
               ),
