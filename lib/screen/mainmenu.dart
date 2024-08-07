@@ -2,6 +2,9 @@ import 'package:enruta/common/footer.dart';
 import 'package:enruta/screen/dashboard.dart';
 import 'package:enruta/common/header.dart';
 import 'package:enruta/screen/buyticket.dart';
+import 'package:enruta/screen/maps.dart';
+import 'package:enruta/screen/mytickets.dart';
+import 'package:enruta/screen/profile.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -29,20 +32,22 @@ class MenuScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      _buildSquareButton(
-                          context, Icons.directions_bus, 'Viajes'),
+                      _buildSquareButton(context, Icons.directions_bus, 'Rutas',
+                          const DashboardScreen()),
                       const SizedBox(width: 16),
-                      _buildSquareButton(context, Icons.event, 'Eventos'),
+                      _buildSquareButton(
+                          context, Icons.map, 'Mapa', MapsScreen()),
                     ],
                   ),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      _buildSquareButton(
-                          context, Icons.shopping_cart, 'Compras'),
+                      _buildSquareButton(context, Icons.confirmation_number,
+                          'Mis boletos', const MyTicketsScreen()),
                       const SizedBox(width: 16),
-                      _buildSquareButton(context, Icons.person, 'Perfil'),
+                      _buildSquareButton(context, Icons.person, 'Perfil',
+                          const ProfileScreen()),
                     ],
                   ),
                 ],
@@ -72,7 +77,8 @@ class MenuScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSquareButton(BuildContext context, IconData icon, String label) {
+  Widget _buildSquareButton(
+      BuildContext context, IconData icon, String label, Widget child) {
     return Column(
       children: [
         Container(
@@ -82,8 +88,7 @@ class MenuScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => const DashboardScreen()),
+                MaterialPageRoute(builder: (context) => child),
               );
             },
             style: ElevatedButton.styleFrom(

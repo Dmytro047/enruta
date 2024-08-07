@@ -70,16 +70,16 @@ class LoginScreen extends StatelessWidget {
                   foregroundColor: Colors.white,
                 ),
                 onPressed: () {
-                  String username = _usernameController.text;
-                  String password = _passwordController.text;
+                  // String username = _usernameController.text;
+                  // String password = _passwordController.text;
 
-                  if (username.isEmpty || password.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content: Text('Por favor, llene todos los campos')),
-                    );
-                    return;
-                  }
+                  // if (username.isEmpty || password.isEmpty) {
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //     const SnackBar(
+                  //         content: Text('Por favor, llene todos los campos')),
+                  //   );
+                  //   return;
+                  // }
                   Navigator.push(
                       context,
                       MaterialPageRoute(
