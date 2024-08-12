@@ -1,14 +1,13 @@
-import 'package:enruta/common/footer.dart';
-import 'package:enruta/common/header.dart';
-import 'package:enruta/screen/tripdetail.dart';
 import 'package:flutter/material.dart';
+
+import '../common/header.dart';
 
 class MapsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Mapa'),
+      appBar: const HeaderWidget(
+        titleText: 'Mapa',
       ),
       body: Column(
         children: [
@@ -26,21 +25,31 @@ class MapsScreen extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Destino',
-                      border: OutlineInputBorder(),
+                      hintStyle: TextStyle(color: Colors.grey[600]),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(color: Colors.black),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(color: Colors.orange),
+                      ),
                     ),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    padding: EdgeInsets.all(16),
-                    minimumSize: Size(48, 48),
+                    padding: const EdgeInsets.all(16),
+                    minimumSize: const Size(48, 48),
                   ),
-                  child: Icon(Icons.search),
+                  child: const Icon(Icons.search, color: Colors.white),
                 ),
               ],
             ),

@@ -9,19 +9,36 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 2, 55, 152),
-      title: Text(titleText),
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
+      ),
+      backgroundColor: Colors.black,
+      title: Text(
+        titleText,
+        style: const TextStyle(color: Colors.white),
+      ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.account_circle),
+          icon: const Icon(Icons.account_circle, color: Colors.white),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => ProfileScreen()),
             );
           },
+          padding: const EdgeInsets.all(8.0),
+          constraints: const BoxConstraints(),
+          iconSize: 28,
         ),
-        const Text('Marcos Martinez'),
+        const Center(
+          child: Text(
+            'Marcos',
+            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
+          ),
+        ),
         const SizedBox(width: 10),
       ],
     );

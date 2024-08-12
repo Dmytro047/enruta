@@ -10,6 +10,46 @@ class BuyTicketScreen extends StatefulWidget {
 class _BuyTicketState extends State<BuyTicketScreen> {
   bool showPaymentSection = false;
 
+  void _showPaymentDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Detalles de Pago'),
+          content: CreditCardFormDialog(),
+          actions: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: () {
+                // Handle payment submission here
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Cancelar',
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: () {
+                // Handle payment submission here
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Pagar',
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +64,8 @@ class _BuyTicketState extends State<BuyTicketScreen> {
             Container(
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
+                color: Colors.orange,
+                border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Column(
@@ -54,15 +95,15 @@ class _BuyTicketState extends State<BuyTicketScreen> {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  showPaymentSection = true;
-                });
-              },
-              child: const Text('Comprar boleto'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: _showPaymentDialog,
+              child: const Text(
+                'Comprar boleto',
+              ),
             ),
-            const SizedBox(height: 10),
-            if (showPaymentSection) CreditCardFormDialog(),
           ],
         ),
       ),
@@ -75,30 +116,59 @@ class CreditCardFormDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: [
-      Text('Ingrese los datos de su tarjeta de crédito'),
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Número de tarjeta',
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const Text(
+          'Ingrese los datos de su tarjeta de crédito',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
-          SizedBox(height: 10),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Fecha de expiración (MM/YY)',
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 20),
+        TextField(
+          decoration: InputDecoration(
+            labelText: 'Número de tarjeta',
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
             ),
-          ),
-          SizedBox(height: 10),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Código de seguridad',
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.orange),
             ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           ),
-        ],
-      )
-    ]);
+        ),
+        const SizedBox(height: 10),
+        TextField(
+          decoration: InputDecoration(
+            labelText: 'Fecha de expiración (MM/YY)',
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.orange),
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          ),
+        ),
+        const SizedBox(height: 10),
+        TextField(
+          decoration: InputDecoration(
+            labelText: 'Código de seguridad',
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.orange),
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:enruta/screen/dashboard.dart';
 import 'package:enruta/screen/mainmenu.dart';
 import 'package:enruta/screen/signup.dart';
 import 'package:flutter/material.dart';

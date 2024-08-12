@@ -1,7 +1,4 @@
-import 'package:enruta/common/footer.dart';
 import 'package:enruta/screen/dashboard.dart';
-import 'package:enruta/common/header.dart';
-import 'package:enruta/screen/buyticket.dart';
 import 'package:enruta/screen/maps.dart';
 import 'package:enruta/screen/mytickets.dart';
 import 'package:enruta/screen/profile.dart';
@@ -14,64 +11,52 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
-          children: [
-            Icon(Icons.person),
-            SizedBox(width: 8),
-            Text('Usuario'),
-          ],
-        ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _buildSquareButton(context, Icons.directions_bus, 'Rutas',
-                          const DashboardScreen()),
-                      const SizedBox(width: 16),
-                      _buildSquareButton(
-                          context, Icons.map, 'Mapa', MapsScreen()),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _buildSquareButton(context, Icons.confirmation_number,
-                          'Mis boletos', const MyTicketsScreen()),
-                      const SizedBox(width: 16),
-                      _buildSquareButton(context, Icons.person, 'Perfil',
-                          const ProfileScreen()),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+        backgroundColor: Colors.black,
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.search),
-                onPressed: () {},
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildSquareButton(context, Icons.directions_bus,
+                            'Rutas', const DashboardScreen()),
+                        const SizedBox(width: 16),
+                        _buildSquareButton(
+                            context, Icons.map, 'Mapa', MapsScreen()),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildSquareButton(context, Icons.confirmation_number,
+                            'Mis boletos', const MyTicketsScreen()),
+                        const SizedBox(width: 16),
+                        _buildSquareButton(context, Icons.person, 'Perfil',
+                            const ProfileScreen()),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              IconButton(
-                icon: const Icon(Icons.rocket),
-                onPressed: () {},
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -92,34 +77,25 @@ class MenuScreen extends StatelessWidget {
               );
             },
             style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
+              padding: const EdgeInsets.all(8.0),
+              elevation: 5,
             ),
-            child: Icon(icon, size: 40),
+            child: Icon(icon, size: 40, color: Colors.white),
           ),
         ),
         const SizedBox(height: 8),
-        Text(label),
+        Text(
+          label,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
       ],
-    );
-  }
-}
-
-class PlaceholderScreen extends StatelessWidget {
-  final String label;
-
-  const PlaceholderScreen({super.key, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(label),
-      ),
-      body: Center(
-        child: Text('Esta es la pantalla de $label'),
-      ),
     );
   }
 }

@@ -59,9 +59,9 @@ class DashboardScreen extends StatelessWidget {
                       margin: const EdgeInsets.all(10),
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(10),
                         color: Colors.orange,
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

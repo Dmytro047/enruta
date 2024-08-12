@@ -19,6 +19,7 @@ class SignupScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -28,7 +29,13 @@ class SignupScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Correo electrónico',
-                  border: OutlineInputBorder(),
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange),
+                  ),
                 ),
               ),
               SizedBox(height: 10),
@@ -37,7 +44,13 @@ class SignupScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
-                  border: OutlineInputBorder(),
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange),
+                  ),
                 ),
               ),
               SizedBox(height: 10),
@@ -47,7 +60,13 @@ class SignupScreen extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
-                  border: OutlineInputBorder(),
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
@@ -57,7 +76,15 @@ class SignupScreen extends StatelessWidget {
                 onPressed: () {
                   // Acción al presionar el botón "Crear cuenta"
                 },
-                child: Text('Crear cuenta'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange, // Background color
+                  foregroundColor: Colors.white, // Text color
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: const Text('Crear cuenta'),
               ),
               SizedBox(height: 10),
 
@@ -70,7 +97,7 @@ class SignupScreen extends StatelessWidget {
                     TextSpan(
                       text: 'Inicia sesión.',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.orange,
                         decoration: TextDecoration.underline,
                       ),
                       recognizer: TapGestureRecognizer()

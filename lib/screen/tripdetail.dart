@@ -22,15 +22,16 @@ class TripDetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(10),
                   color: Colors.orange,
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,13 +50,20 @@ class TripDetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 10),
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: 'Escribe tu comentario aquí...',
-                  border: OutlineInputBorder(),
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange),
+                  ),
                 ),
                 maxLines: 3,
               ),
@@ -65,8 +73,12 @@ class TripDetailScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0, vertical: 12.0),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Action to submit the evaluation
+                  },
                   child: const Text('Someter evaluación'),
                 ),
               ),
