@@ -17,7 +17,6 @@ class ForgotPasswordScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Title
             const Text(
               'Recuperar Contraseña',
               style: TextStyle(
@@ -28,8 +27,6 @@ class ForgotPasswordScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-
-            // Instruction
             const Text(
               'Ingrese su correo electrónico para recibir un enlace de recuperación de contraseña.',
               style: TextStyle(
@@ -39,8 +36,6 @@ class ForgotPasswordScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-
-            // Email Input
             const TextField(
               decoration: InputDecoration(
                 labelText: 'Correo Electrónico',
@@ -56,25 +51,19 @@ class ForgotPasswordScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 20),
-
-            // Submit Button
             ElevatedButton(
-              onPressed: () {
-                // Handle password recovery
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange, // Background color
-                foregroundColor: Colors.white, // Text color
+                backgroundColor: Colors.orange,
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
               child: const Text('Enviar Enlace de Recuperación'),
             ),
             const SizedBox(height: 20),
-
-            // Back to Login Button
             TextButton(
               onPressed: () {
-                Navigator.pop(context); // Navigate back to the login screen
+                Navigator.pop(context);
               },
               child: RichText(
                 text: TextSpan(
@@ -88,7 +77,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          // Acción al presionar el texto "Inicia sesión."
                           Navigator.push(
                             context,
                             MaterialPageRoute(

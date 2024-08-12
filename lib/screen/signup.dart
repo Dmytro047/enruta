@@ -15,7 +15,6 @@ class SignupScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Título "Regístrate ahora"
               const Text(
                 'Regístrate ahora',
                 style: TextStyle(
@@ -26,8 +25,6 @@ class SignupScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-
-              // Input de Correo electrónico
               const TextField(
                 decoration: InputDecoration(
                   hintText: 'Correo electrónico',
@@ -41,8 +38,6 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-
-              // Input de Nombre de usuario
               const TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
@@ -56,8 +51,6 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-
-              // Input de Contraseña
               const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -72,22 +65,16 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Botón "Crear cuenta"
               ElevatedButton(
-                onPressed: () {
-                  // Acción al presionar el botón "Crear cuenta"
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange, // Background color
-                  foregroundColor: Colors.white, // Text color
+                  backgroundColor: Colors.orange,
+                  foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
                 child: const Text('Crear cuenta'),
               ),
               const SizedBox(height: 10),
-
-              // Texto "Ya tienes cuenta? Inicia sesión."
               RichText(
                 text: TextSpan(
                   text: 'Ya tienes cuenta? ',
@@ -101,7 +88,6 @@ class SignupScreen extends StatelessWidget {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          // Acción al presionar el texto "Inicia sesión."
                           Navigator.push(
                             context,
                             MaterialPageRoute(

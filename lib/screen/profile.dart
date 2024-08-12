@@ -1,3 +1,4 @@
+import 'package:enruta/screen/editprofile.dart';
 import 'package:enruta/screen/login.dart';
 import 'package:flutter/material.dart';
 import '../common/footer.dart';
@@ -15,9 +16,7 @@ class ProfileScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Profile Picture and Name
             const Row(
               children: [
                 CircleAvatar(
@@ -53,8 +52,6 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-
-            // Profile Details
             Container(
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
@@ -80,26 +77,23 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Edit Profile Button
             ElevatedButton(
               onPressed: () {
-                // Navigate to Edit Profile Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfileScreen()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
               ),
               child: const Text('Editar Perfil'),
             ),
             const SizedBox(height: 20),
-
-            // Logout Button
-
             ElevatedButton(
               onPressed: () {
-                // Perform logout action and navigate to LoginScreen
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => LoginScreen()),
@@ -108,7 +102,6 @@ class ProfileScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
               ),
               child: const Text('Cerrar sesión'),
             ),
