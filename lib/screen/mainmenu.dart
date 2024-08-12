@@ -1,4 +1,5 @@
 import 'package:enruta/screen/dashboard.dart';
+import 'package:enruta/screen/login.dart';
 import 'package:enruta/screen/maps.dart';
 import 'package:enruta/screen/mytickets.dart';
 import 'package:enruta/screen/profile.dart';
@@ -17,7 +18,10 @@ class MenuScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout, color: Colors.white),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+              );
             },
           ),
         ],

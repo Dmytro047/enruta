@@ -1,3 +1,4 @@
+import 'package:enruta/screen/forgotpassword.dart';
 import 'package:enruta/screen/mainmenu.dart';
 import 'package:enruta/screen/signup.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +109,12 @@ class LoginScreen extends StatelessWidget {
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordScreen()));
+                },
                 child: const Text('Olvidé mi contraseña'),
               ),
             ],

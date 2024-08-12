@@ -6,6 +6,8 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: const Text('Regístrate ahora'), backgroundColor: Colors.white),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -14,7 +16,7 @@ class SignupScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Título "Regístrate ahora"
-              Text(
+              const Text(
                 'Regístrate ahora',
                 style: TextStyle(
                   fontSize: 24,
@@ -23,10 +25,10 @@ class SignupScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Input de Correo electrónico
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Correo electrónico',
                   hintStyle: TextStyle(color: Colors.grey),
@@ -38,10 +40,10 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Input de Nombre de usuario
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
                   hintStyle: TextStyle(color: Colors.grey),
@@ -53,10 +55,10 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Input de Contraseña
-              TextField(
+              const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -69,7 +71,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Botón "Crear cuenta"
               ElevatedButton(
@@ -80,23 +82,20 @@ class SignupScreen extends StatelessWidget {
                   backgroundColor: Colors.orange, // Background color
                   foregroundColor: Colors.white, // Text color
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
                 ),
                 child: const Text('Crear cuenta'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Texto "Ya tienes cuenta? Inicia sesión."
               RichText(
                 text: TextSpan(
                   text: 'Ya tienes cuenta? ',
-                  style: TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.black),
                   children: [
                     TextSpan(
                       text: 'Inicia sesión.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.orange,
                         decoration: TextDecoration.underline,
                       ),
